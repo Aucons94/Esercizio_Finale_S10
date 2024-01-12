@@ -37,7 +37,7 @@ const Header = (props) => {
               }}
             />
             <Button
-              variant="outline-dark"
+              variant="outline-dark btn bg-dark text-light"
               onClick={() => {
                 props.updateSearch(searchString);
               }}

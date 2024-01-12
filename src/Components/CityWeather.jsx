@@ -19,7 +19,6 @@ const CityWeather = (props) => {
     }
 
     try {
-      // Fetch tempo di oggi
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${props.cityName}&appid=c4e42c21f2049958e57e2a3065d730fc`
       );
@@ -32,7 +31,6 @@ const CityWeather = (props) => {
         setNotFound(true);
       }
 
-      // Fetch previsioni 5 giorni
       const forecastResponse = await fetch(
         `https://api.openweathermap.org/data/2.5/forecast?q=${props.cityName}&appid=c4e42c21f2049958e57e2a3065d730fc`
       );
@@ -82,8 +80,6 @@ const CityWeather = (props) => {
   const iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
   const description = data.weather[0].main;
   const country = data.sys.country;
-
-  // Prendo i dati delle previsioni dei 5 giorni successivi ad un orario fisso
   const dailyForecasts = forecast.list.filter((item) => item.dt_txt.includes("12:00:00"));
 
   return (
@@ -92,7 +88,7 @@ const CityWeather = (props) => {
         <Row className="d-flex justify-content-center">
           <Col xs={12} md={6} className="d-flex flex-column align-items-center">
             <h1 className="display-1">{temperature}°C</h1>
-            <h4 className="text-secondary">
+            <h4 className="text-black text-capitalize">
               {props.cityName}, {country}
             </h4>
             <p>Humidity: {humidity}%</p>
