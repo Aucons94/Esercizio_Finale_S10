@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+body {
+  height: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 97, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+.ancora {
+  text-decoration: none;
+  color: inherit;
+}
+.weatherIcon {
+  width: 100px;
+  height: 100px;
+}
+
+@media screen and (max-width: 576px) {
+  .nextFive {
+    flex-direction: column;
+  }
+}
